@@ -9,7 +9,7 @@ pipeline {
    stage('Create ECR repository') {
       steps {
             withAWS(credentials: 'aws-ecr-credentials', region: 'us-east-1') {
-                  sh "chmod +x ./create_repo.sh"
+                  sh "chmod 777 ./create_repo.sh"
                   sh "./create_repo.sh"
                 }
             }
